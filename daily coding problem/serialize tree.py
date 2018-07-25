@@ -37,7 +37,7 @@ def deserialize(data):
 # if your solution differs from this one. We will be only going through one possible solution.
 
 # # We can approach this problem by first figuring out what we would like the serialized tree to 
-# ook like. Ideally, it would contain the minimum information required to encode all the necessary
+# look like. Ideally, it would contain the minimum information required to encode all the necessary
 # information about the binary tree. One possible encoding might be to borrow S-expressions from Lisp. 
 # The tree Node(1, Node(2), Node(3)) would then look like '(1 (2 () ()) (3 () ()))', where the empty brackets denote nulls.
 
