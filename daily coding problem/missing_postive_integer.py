@@ -6,3 +6,28 @@
 # For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should give 3.
 
 # You can modify the input array in-place.
+
+
+#O(N) time O(k)space
+def first_missing_positive(nums):
+    if not nums:
+        return 1
+    for i, num in enumerate(nums):
+        while i + 1 != nums[i] and 0 < nums[i] <= len(nums):
+            v = nums[i]
+            nums[i], nums[v - 1] = nums[v - 1], nums[i]
+            nums[v - 1] = v
+            if nums[i] == nums[v - 1]:
+                break
+    for i, num in enumerate(nums, 1):
+        if num != i:
+            return i
+    return len(nums) + 1
+  
+  #O(N)time and space
+  def first_missing_positive(nums):
+    s = set(nums)
+    i = 1
+    while i in s:
+        i += 1
+    return i
