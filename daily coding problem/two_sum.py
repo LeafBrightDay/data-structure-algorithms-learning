@@ -12,9 +12,9 @@
 def two_sum(lst, k):
     seen = set()
     for num in lst:
-        if k - num in seen:
+        if k - num in seen:    # O(1) for search in set
             return True
-        seen.add(num)
+        seen.add(num)   #key step
     return False
 
 
